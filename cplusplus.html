@@ -1,0 +1,128 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" class="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Rancho&effect=3d" rel="stylesheet" type="text/css" />    
+</head>
+<body>
+    <div class="container"> 
+        <header class="header">
+            <a href="/">A Fertile Mind</a>
+        </header>
+        <nav class="menu">
+            <a href="/">Home</a> &nbsp; &nbsp;
+            <a href="cplusplus.html">C++</a>
+            <a href="about.html">About Me</a> &nbsp; &nbsp;
+            <a href="contact.html">Contact Me</a>        
+        </nav>
+        <article class="main">
+        <h1>C++ Standard Template Libraries</h1>
+        <h1>How to choose your C++ STL containers</h1>
+            <p href = "http://stackoverflow.com/questions/471432/in-which-scenario-do-i-use-a-particular-stl-container/22671607#22671607">http://stackoverflow.com/questions/471432/in-which-scenario-do-i-use-a-particular-stl-container/22671607#22671607</p>
+        <p href = "http://homepages.e3.net.nz/~djm/cppcontainers.html">http://homepages.e3.net.nz/~djm/cppcontainers.html</p>
+        <div class = "seqCont">
+            <h1>Sequence containers:</h1>
+            <ul>
+                <li>vector</li>
+                <li>deque</li>
+                <li>list</li>
+                <li>forward_list</li>
+            </ul>
+            <h2>vector</h2>
+            <ul>
+                <li>Stores elements in the contagious memory locations</li>
+                <li>Initially allocates block of memory which is not essentially the same size of number of elements being initialized, can check that using capacity()</li>
+                <li>Performs well if the operation (add/remove) is performed at the end</li>
+                <li>Provides array like indexing</li>
+                <li>Provides amortized time for inserting data basically it is in terms of O(1)</li>
+                <li>If inserting new element causes the vector size to exceed the originally allocated memory, then reallocation will take place to accommodate the new element and the original block will be copied to this new memory location</li>
+                <li>Element can be accessed by offsetting pointer to another element</li>
+                <li>Performs worse if the insert/delete happens at the beginning</li>
+                <h3>Complexity</h3>
+                <li>Random access - constant O(1)</li>
+                <li>Insertion or removal of elements at the end - amortized constant O(1)</li>
+                <l>Insertion or removal of elements - linear in distance to the end of the vector O(n)</l>
+            </ul>
+            <h2>deque</h2>
+            <ul>
+                <li>Acronym of Double Ended Queue</li>
+                <li>Performs insertion/deletion at both the ends</li>
+                <li>Memory is allocated in chunks but scattered in memory</li>
+                <li>Provides array like indexing elements</li>
+                <li>Returns garbage value if element is accessed by offsetting pointer to another element, since the memory is not allocated in contagious memory locations as in vector</li>
+                <li>If the operation (insert/delete) frequently performed other than beginning/end it performs worse</li>
+                <h3>Complexity</h3>
+                <li>Random access – O(1)</li>
+                <li>Insert/remove element at the beginning/end – O(1)</li>
+                <li>Insert/remove element – O(n)</li>
+            </ul>
+            <h2>list</h2>
+            <ul>
+                <li>Constant time insert/delete of elements anywhere from the list</li>
+                <li>Implemented as doubly linked list</li>
+                <li>Indexing is not available</li>
+                <li>Performs generally better in inserting, extracting and moving elements in any position within the list for which an iterator has already been obtained</li>
+            </ul>
+            <h2>forward_list</h2>
+            <ul>
+                <li>Implemented as single linked list</li>
+                <li>Indexing is not available</li>
+            </ul>
+        </div>
+        <div class="assoCont">
+            <h1>Associative containers:</h1>
+            <ul>
+                <li>map</li>
+                <li>set</li>
+                <li>multimap</li>
+                <li>multiset</li>
+            </ul>            
+            <h2>map</h2>
+            <ul>
+                <li>key value pair, does not allow duplicate keys</li>
+                <li>inserting element using [] will replace/create element</li>
+                <li>inserting using insert() will insert if the key does not exist in map, otherwise fails</li>
+                <li>Underlying data structure is red black tree (binary search tree)</li>
+                <li>Can index by its key to access element (access using [])</li>
+                <li>Slower than the unorder_map which is implemented using hash table</li>
+            </ul>
+            <h2>multimap</h2>
+            <ul>
+                <li>key value pair, does allow duplicate keys</li>
+                <li>does not implement [] operator</li>
+                <li>Underlying data structure is red black tree (binary search tree)</li>
+            </ul> 
+            <h2>set</h2>
+            <ul>
+                <li>The value to be stored act as a key</li>
+                <li>The values cannot be modified</li>
+                <li>Elements can be inserted or removed</li>
+                <li>Underlying data structure is red black tree (binary search tree)</li>
+            </ul>
+            <h2>Unordered associative containers below are implemented using hash table, thus time complexity id always O(1)</h2>
+            <ul>
+                <li>unordered_map</li>
+                <li>unordered_set</li>
+                <li>unordered_multimap</li>
+                <li>unordered_multiset</li>
+            </ul>            
+            <h2>Complexity comparison for containers</h2> 
+            <p href = "http://www.cplusplus.com/reference/stl/">http://www.cplusplus.com/reference/stl/</p>
+            <p href = "http://en.cppreference.com/w/cpp/container">http://en.cppreference.com/w/cpp/container</p>
+            <p href = "http://john-ahlgren.blogspot.com/2013/10/stl-container-performance.html">http://john-ahlgren.blogspot.com/2013/10/stl-container-performance.html</p>
+        </div>
+        <div class = "csharp">
+        <h1>C#</h1>
+        <p>We could use ILDASM to gather information about an IL of an application. This uses Manifest and Metadata to retrieve information about an application</p>
+        </div>
+        </article>
+        <footer class="footer">
+            &copy; 2017 A Fertile Mind &nbsp; &nbsp; Design by Panchatcharam Murugesan
+        </footer>
+    </div>   
+</body>
+</html>
